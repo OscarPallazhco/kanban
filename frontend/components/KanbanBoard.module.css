@@ -1,0 +1,547 @@
+/* Header Styles */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-gray-border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.headerAccentBar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-yellow) 0%, var(--color-blue-primary) 50%, var(--color-purple-secondary) 100%);
+  width: 100%;
+}
+
+.headerContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerBranding {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoIconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-blue-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(32, 157, 215, 0.2);
+}
+
+.logoIcon {
+  color: var(--color-blue-primary);
+}
+
+.headerTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.headerSubtitle {
+  font-size: 13px;
+  color: var(--color-gray-text);
+  margin-top: 2px;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: var(--color-gray-light);
+  border: 1px solid var(--color-gray-border);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-dark-navy-muted);
+}
+
+.statusIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent-yellow);
+  box-shadow: 0 0 6px rgba(236, 173, 10, 0.6);
+}
+
+.statusText {
+  letter-spacing: 0.01em;
+}
+
+/* Board Layout */
+.boardWrapper {
+  flex: 1;
+  padding: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.columnsTrack {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  min-height: calc(100vh - 140px);
+}
+
+/* Column Styles */
+.columnContainer {
+  background-color: var(--color-surface-column);
+  border-radius: var(--radius-lg);
+  border: 1px solid #dbe2ea;
+  flex: 1 1 240px;
+  min-width: 245px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 140px);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease;
+}
+
+.columnHeader {
+  padding: 16px 16px 12px 16px;
+  border-bottom: 1px solid #dbe2ea;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.columnTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.columnTitleClickable {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 2px 6px;
+  margin: -2px -6px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+  overflow: hidden;
+}
+
+.columnTitleClickable:hover {
+  background-color: rgba(3, 33, 71, 0.05);
+}
+
+.columnTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.renameColumnButton {
+  color: var(--color-gray-text);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.columnTitleClickable:hover .renameColumnButton {
+  opacity: 1;
+  color: var(--color-blue-primary);
+}
+
+.columnCountBadge {
+  background-color: #ffffff;
+  color: var(--color-dark-navy);
+  border: 1px solid #dbe2ea;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  min-width: 22px;
+  text-align: center;
+}
+
+/* Inline Title Editing */
+.columnTitleEditWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.columnTitleInput {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-blue-primary);
+  outline: none;
+  background-color: #ffffff;
+}
+
+.columnTitleSaveBtn {
+  background-color: var(--color-blue-primary);
+  color: #ffffff;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.columnTitleSaveBtn:hover {
+  background-color: var(--color-blue-primary-hover);
+}
+
+.columnTitleCancelBtn {
+  background-color: #ffffff;
+  color: var(--color-gray-text);
+  border: 1px solid var(--color-gray-border);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.columnTitleCancelBtn:hover {
+  background-color: var(--color-gray-light);
+  color: var(--color-dark-navy);
+}
+
+/* Add Card Trigger Button */
+.addCardTriggerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 7px 12px;
+  background-color: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--radius-sm);
+  color: var(--color-dark-navy);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.addCardTriggerButton:hover {
+  border-color: var(--color-purple-secondary);
+  color: var(--color-purple-secondary);
+  background-color: var(--color-purple-secondary-light);
+}
+
+/* Droppable Cards Container */
+.cardsList {
+  flex: 1;
+  padding: 12px 14px 16px 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 120px;
+  transition: background-color 0.2s ease;
+}
+
+.cardsListDraggingOver {
+  background-color: rgba(32, 157, 215, 0.05);
+}
+
+.emptyColumnPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 12px;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  color: var(--color-gray-text);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Card Item */
+.cardItem {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-md);
+  padding: 14px 14px 12px 14px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+  cursor: grab;
+}
+
+.cardItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.cardDragging {
+  box-shadow: var(--shadow-drag);
+  border: 1.5px solid var(--color-accent-yellow) !important;
+  transform: rotate(1deg) scale(1.02);
+  cursor: grabbing;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.dragHandle {
+  color: var(--color-gray-text);
+  opacity: 0.4;
+  margin-top: 1px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+}
+
+.cardItem:hover .dragHandle {
+  opacity: 0.85;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  line-height: 1.4;
+  flex: 1;
+  word-break: break-word;
+}
+
+.cardDeleteButton {
+  color: var(--color-gray-text);
+  padding: 4px;
+  margin: -4px -4px 0 0;
+  border-radius: var(--radius-sm);
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.cardItem:hover .cardDeleteButton {
+  opacity: 0.8;
+}
+
+.cardDeleteButton:hover {
+  opacity: 1 !important;
+  color: var(--color-danger);
+  background-color: var(--color-danger-light);
+}
+
+.cardDetails {
+  font-size: 13px;
+  color: var(--color-gray-text);
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-left: 24px;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Modal Dialog */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(3, 33, 71, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-border);
+  animation: scaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modalHeader {
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid var(--color-gray-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+}
+
+.modalSubtitle {
+  font-size: 13px;
+  color: var(--color-gray-text);
+  margin-top: 3px;
+}
+
+.modalCloseButton {
+  color: var(--color-gray-text);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.modalCloseButton:hover {
+  background-color: var(--color-gray-light);
+  color: var(--color-dark-navy);
+}
+
+.modalForm {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.requiredStar {
+  color: var(--color-danger);
+}
+
+.textInput,
+.textAreaInput {
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--color-dark-navy);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background-color: #ffffff;
+}
+
+.textInput:focus,
+.textAreaInput:focus {
+  border-color: var(--color-blue-primary);
+  box-shadow: 0 0 0 3px rgba(32, 157, 215, 0.15);
+}
+
+.textAreaInput {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.modalActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cancelButton {
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-text);
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  transition: all 0.15s ease;
+}
+
+.cancelButton:hover {
+  color: var(--color-dark-navy);
+  background-color: var(--color-gray-light);
+}
+
+.submitButton {
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-purple-secondary);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--color-purple-secondary-hover);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
